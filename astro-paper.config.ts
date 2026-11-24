@@ -3,8 +3,8 @@ import { defineAstroPaperConfig } from "./src/types/config";
 export default defineAstroPaperConfig({
   site: {
     url: "https://travel-affiliate-blog.pages.dev/",
-    title: "Travelling well",
-    description: "Real stories from travel paired with proven and tested travel gear, packing systems, and compact beauty and health products to help you travel well",
+    title: "Travel Well",
+    description: "Stories from the road and practical travel notes for couples who love to explore, notice beauty and meet people along the way.",
     author: "Colin Paixao",
     profile: "https://travel-affiliate-blog.pages.dev/",
     ogImage: "default-og.jpg",

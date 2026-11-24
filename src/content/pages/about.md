@@ -1,15 +1,18 @@
 ---
 title: "About"
-description: "About Travelling Well - stories from the road, tested travel, carry on gear, accessories and TSA-approved beauty essentials."
+description: "About Travel Well: stories from the road and practical travel notes for couples who love to explore."
 ---
 
-**Travelling Well** is a journal and product site devoted to the art of travelling with less stress, proper bags and accessories, and healthier rituals to keep you feeling organized, relaxed and feeling like yourself. Whether crossing an ocean or a weekend getaway, being well is essential to travelling well.
-Here, honest stories from the road meet thoroughly tested travel gear, smart packing systems, and TSA-approved beauty and wellness essentials that actually hold up in the rigors of arriving to your destination.
+**Travel Well** is a journal for people who want to travel with an open heart: to reach out to others, notice the beauty around them and stay curious about new food, music and culture.
+
+I'm Colin, a photographer at heart, and I started Travel Well to share the small human moments that make a trip, along with the practical notes that help make those moments easier.
+
 ## What you will find here
 
-- **Stories from the Road:** Reflective travel essays and real-world travel lessons learned from experience.
-- **Travel gear and carry on accessories:** Organizers, bags, adapters, and comfort gear chosen for durability and weight.
-- **Travel Beauty & Wellness:** Leak proof, carry-on-sized skincare, healthcare, and in-flight hydration staples.
+- **The Journal.** Humble stories about kindness on the road, tasting something new, music and culture, and noticing beauty.
+- **Travel notes for her, for him and for the two of you.** Packing light, looking and feeling well on the road, and what makes a trip easier.
+- **Packing notes.** Plain guidance on carry-on and liquids rules, with the date we last checked them.
 
-## Affiliate Disclosure 
-*Travelling Well participates in affiliate marketing programs, including the Amazon Services LLC Associates Program and select beauty and travel retail partners.  When you click on links to featured products and make a purchase, we may earn a small commission at no additional cost to you.  We only recommend items that genuinely earn their space in your suitcase or carry-on*
+## Images
+
+Many images on this site are AI-generated illustrations. We will label real photographs from our own travels as they are added.

@@ -3,8 +3,8 @@ import type { UIStrings } from "../types";
 export default {
   nav: {
     home: "Home",
-    posts: "Posts",
-    tags: "Tags",
+    posts: "Journal",
+    tags: "Topics",
     about: "About",
     archives: "Archives",
     search: "Search",
@@ -31,8 +31,8 @@ export default {
   home: {
     socialLinks: "Social Links",
     featured: "Featured",
-    recentPosts: "Recent Posts",
-    allPosts: "All Posts",
+    recentPosts: "Recent stories",
+    allPosts: "All stories",
   },
   footer: {
     copyright: "Copyright",
@@ -45,8 +45,9 @@ export default {
     tagsTitle: "Tags",
     tagsDesc: "All the tags used in posts.",
 
-    postsTitle: "Posts",
-    postsDesc: "All the articles I've posted.",
+    postsTitle: "Journal",
+    postsDesc:
+      "Stories from the road: kindness, food, music and the beauty around us.",
 
     archivesTitle: "Archives",
     archivesDesc: "All the articles I've archived.",
@@ -60,7 +61,7 @@ export default {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     toggleTheme: "Toggle theme",
-    searchPlaceholder: "Search posts...",
+    searchPlaceholder: "Search the Journal...",
     noResults: "No results found",
     goToPreviousPage: "Go to previous page",
     goToNextPage: "Go to next page",

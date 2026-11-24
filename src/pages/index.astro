@@ -1,126 +1,223 @@
 ---
 import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Socials from "@/components/Socials.astro";
 import Card from "@/components/Card.astro";
-import LinkButton from "@/components/LinkButton.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
+import { getPostUrl } from "@/utils/getPostPaths";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
 
-const { socials, posts: postsConfig } = config;
+const { posts: postsConfig } = config;
 
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
 
 const posts = await getCollection("posts");
 const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const featuredStory =
+  sortedPosts.find(({ data }) => data.featured) ?? sortedPosts[0];
+const moreStories = sortedPosts
+  .filter(p => p.id !== featuredStory?.id)
+  .slice(0, postsConfig.perIndex);
 const homePath = getRelativeLocaleUrl(locale, "");
+
+const existingTags = new Set(sortedPosts.flatMap(({ data }) => data.tags));
+const storyTypes = [
+  { slug: "reaching-out", label: "Reaching out" },
+  { slug: "taste", label: "Taste" },
+  { slug: "sound", label: "Sound" },
+  { slug: "wonder", label: "Wonder" },
+];
+
+const doors = [
+  {
+    title: "For her",
+    text: "Skin, hair and makeup know-how for the carry-on: what fits, what passes security and what travels well.",
+    tint: "bg-blossom/15 text-foreground",
+  },
+  {
+    title: "For him",
+    text: "Packing and grooming notes for him: simple, tidy and easy to feel good about.",
+    tint: "bg-ocean/10 text-foreground",
+  },
+  {
+    title: "Together",
+    text: "Packing for two: shared bags, small habits and the things that make a trip easier.",
+    tint: "bg-gold/20 text-foreground",
+  },
+];
 ---
 
 <Layout>
-  <Header />
+  <Header wide />
   <main
     id="main-content"
     data-layout="index"
     data-home-path={homePath}
-    class="app-layout my-1"
+    class="mx-auto my-1 w-full max-w-6xl px-4"
   >
-    <section id="hero" class="border-border border-b pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Travel Well. Arrive Well.
-      </h1>{" "}
-      <a
-        target="_blank"
-        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
-        class="inline-block"
-        aria-label="RSS Feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="stroke-accent scale-125 stroke-3 rtl:-rotate-90"
+    <section
+      id="hero"
+      class="grid items-center gap-8 py-10 md:grid-cols-2 md:py-16"
+    >
+      <div>
+        <p class="text-accent mb-3 text-sm font-medium tracking-wide">
+          Stories and practical notes for the way you travel
+        </p>
+        <h1 class="font-display text-4xl leading-tight font-medium sm:text-5xl">
+          Travel well.<br />Feel well.
+        </h1>
+        <p class="text-muted-foreground mt-5 max-w-md text-lg leading-relaxed">
+          Travel with an open heart and bring something beautiful home. Honest
+          stories from the road, and practical notes for couples who love to
+          explore.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a
+            href={getRelativeLocaleUrl(locale, "posts")}
+            class="bg-gold text-gold-foreground rounded-full px-6 py-3 text-sm font-medium no-underline transition-opacity hover:opacity-90"
+          >
+            Read the Journal
+          </a>
+          <a
+            href={getRelativeLocaleUrl(locale, "about")}
+            class="border-border hover:border-accent hover:text-accent rounded-full border px-6 py-3 text-sm font-medium no-underline transition-colors"
+          >
+            About Travel Well
+          </a>
+        </div>
+      </div>
+      <div class="overflow-hidden rounded-2xl">
+        <img
+          src="/images/beach-calm.jpg"
+          width="1344"
+          height="756"
+          alt="A couple on a quiet palm-lined beach, one standing in the shallows and one resting on a colourful towel"
+          class="aspect-4/3 w-full object-cover"
+          fetchpriority="high"
         />
-        <span class="sr-only">RSS Feed</span>
-      </a>
+      </div>
+    </section>
 
-      <p>
-        Welcome to <strong>Travelling Well</strong>-real stories from the road paired with tested travel items, accessories, smart packing systems, and TSA-approved beauty and wellness essentials
+    <section id="doors" class="pb-10">
+      <h2 class="font-display text-3xl font-medium">Travel notes for two</h2>
+      <p class="text-muted-foreground mt-2 max-w-xl">
+        Practical, plain-spoken notes for her, for him and for the two of you.
       </p>
-      <p class="mt-2">
-        Read the blog posts or check{" "}
-        <LinkButton
-          class="hover:text-accent underline decoration-dashed underline-offset-4"
-          href="/about"
-        >
-          About
-        </LinkButton>{" "}
-        for more info.
-      </p>
-      {
-        socials.length > 0 && (
-          <div class="mt-4 flex max-sm:flex-col sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
-              {t.home.socialLinks}:
+      <div class="mt-6 grid gap-4 sm:grid-cols-3">
+        {
+          doors.map(door => (
+            <div class:list={["rounded-2xl p-6", door.tint]}>
+              <h3 class="font-display text-2xl font-medium">{door.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed">{door.text}</p>
             </div>
-            <Socials />
-          </div>
-        )
-      }
+          ))
+        }
+      </div>
     </section>
 
     {
-      featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-border border-b": recentPosts.length > 0 },
-          ]}
-        >
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.featured}
-          </h2>
-          <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
+      featuredStory && (
+        <section id="journal" class="border-border border-t py-12">
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p class="text-accent mb-1 text-sm font-medium">The Journal</p>
+              <h2 class="font-display text-3xl font-medium">
+                Small moments from the road
+              </h2>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              {storyTypes.map(type =>
+                existingTags.has(type.slug) ? (
+                  <a
+                    href={getRelativeLocaleUrl(locale, `tags/${type.slug}`)}
+                    class="bg-muted hover:text-accent rounded-full px-4 py-1.5 text-sm no-underline"
+                  >
+                    {type.label}
+                  </a>
+                ) : (
+                  <span class="bg-muted text-muted-foreground rounded-full px-4 py-1.5 text-sm">
+                    {type.label}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
+
+          <a
+            href={getPostUrl(
+              featuredStory.id,
+              featuredStory.filePath,
+              Astro.currentLocale
+            )}
+            class="border-border bg-muted/40 mt-8 grid overflow-hidden rounded-2xl border no-underline md:grid-cols-5"
+          >
+            <img
+              src="/images/carnival-night.jpg"
+              width="1088"
+              height="1211"
+              alt="A dancer in a turquoise carnival costume laughing on a beachfront at night"
+              class="h-full max-h-96 w-full object-cover md:col-span-2 md:max-h-none"
+              loading="lazy"
+            />
+            <div class="p-6 sm:p-10 md:col-span-3">
+              <p class="text-accent text-sm font-medium">Featured story</p>
+              <h3 class="font-display mt-2 text-3xl leading-tight font-medium">
+                {featuredStory.data.title}
+              </h3>
+              <p class="text-muted-foreground mt-3 text-lg leading-relaxed">
+                {featuredStory.data.description}
+              </p>
+              <span class="text-accent mt-5 inline-flex items-center gap-1 text-sm font-medium">
+                Read the story
+                <IconArrowRight class="inline-block rtl:-rotate-180" />
+              </span>
+            </div>
+          </a>
+
+          {moreStories.length > 0 && (
+            <ul class="mt-4 max-w-3xl">
+              {moreStories.map(data => (
+                <Card variant="h3" {...data} />
+              ))}
+            </ul>
+          )}
         </section>
       )
     }
 
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.recentPosts}
-          </h2>
-          <ul>
-            {recentPosts.slice(0, postsConfig.perIndex).map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
-        </section>
-      )
-    }
+    <section
+      id="packing-note"
+      class="bg-sage/25 my-6 rounded-2xl px-6 py-12 text-center sm:px-12"
+    >
+      <p class="text-accent text-sm font-medium">A note on packing</p>
+      <h2
+        class="font-display mx-auto mt-2 max-w-xl text-3xl leading-tight font-medium sm:text-4xl"
+      >
+        Take what you need. Leave room for the unexpected.
+      </h2>
+      <p class="text-muted-foreground mx-auto mt-4 max-w-lg">
+        The best packing list is rarely the longest. Start with a dependable
+        bag, build around things you will actually use, and keep space for the
+        moments you did not plan.
+      </p>
+    </section>
 
-    <div class="my-8 text-center">
-      <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
+    <div class="my-10 text-center">
+      <a
+        href={getRelativeLocaleUrl(locale, "posts")}
+        class="border-border hover:border-accent hover:text-accent inline-flex items-center gap-1 rounded-full border px-6 py-3 text-sm font-medium no-underline transition-colors"
+      >
         {t.home.allPosts}
         <IconArrowRight class="inline-block rtl:-rotate-180" />
-      </LinkButton>
+      </a>
     </div>
   </main>
-  <Footer />
+  <Footer wide />
 </Layout>
 
 <script>

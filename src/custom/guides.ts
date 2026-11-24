@@ -12,6 +12,8 @@ export type RuleNote = {
 export type Guide = {
   slug: string;
   title: string;
+  image?: string; // faded header photo
+  imagePosition?: string; // CSS object-position
   summary: string;
   audience: string[];
   tint: string;
@@ -46,6 +48,8 @@ const batteryRule: RuleNote = {
 export const guides: Guide[] = [
   {
     slug: "power-and-plugs",
+    image: "/images/carryon-bag.jpg",
+    imagePosition: "center 30%",
     title: "Power and plugs",
     summary:
       "Plug adapters, voltage converters, dual-voltage hair tools, cables and travel-approved power banks.",
@@ -100,6 +104,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "skin-and-sun",
+    image: "/images/girls-poolside.jpg",
+    imagePosition: "center 35%",
     title: "Skin and sun",
     summary:
       "Moisturizer, sunscreen, after-sun care and the small routines that keep your skin well on the road.",
@@ -152,6 +158,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "hair-care",
+    image: "/images/girls-poolside.jpg",
+    imagePosition: "center 65%",
     title: "Hair care",
     summary:
       "Hair-type specific care for curls and coils, straight and fine hair, colour-treated hair and short hair.",
@@ -200,6 +208,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "clothes-that-pack-small",
+    image: "/images/hammock-porch.jpg",
+    imagePosition: "center 35%",
     title: "Clothes that pack small",
     summary:
       "Light, wrinkle-resistant layers and swimwear that take up little space and still look good.",
@@ -239,6 +249,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "in-the-air",
+    image: "/images/beach-calm.jpg",
+    imagePosition: "center 30%",
     title: "In the air",
     summary:
       "Neck support, eye masks, compression socks, wipes and the small comforts that make a long flight easier.",
@@ -271,6 +283,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "bags-and-packing",
+    image: "/images/carryon-bag.jpg",
+    imagePosition: "center 70%",
     title: "Bags and packing",
     summary:
       "Carry-on backpacks, weekender bags, packing cubes and clear liquids bags.",
@@ -305,6 +319,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "worth-saving-for",
+    image: "/images/hammock-porch.jpg",
+    imagePosition: "center 65%",
     title: "Worth saving for",
     summary:
       "A few well-made pieces, like an exceptional carry-on or a handbag that lasts: buy once, buy well.",

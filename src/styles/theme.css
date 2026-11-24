@@ -20,18 +20,18 @@
 /* Travel Well: linen base, turquoise brand, gold buttons, night-navy text */
 :root,
 [data-theme="light"] {
-  --background: #fbf8f2;
-  --foreground: #14263d;
-  --accent: #1b7f86;
+  --background: #fdfaf5;
+  --foreground: #2b3f52;
+  --accent: #2d7d84;
   --accent-foreground: #ffffff;
-  --muted: #f1eadb;
-  --muted-foreground: #4f6470;
-  --border: #e7ddcb;
-  --gold: #d4a545;
-  --gold-foreground: #14263d;
-  --ocean: #1f66c7;
-  --blossom: #e56e9a;
-  --sage: #a9b98f;
+  --muted: #f6efe2;
+  --muted-foreground: #566a78;
+  --border: #ece3d3;
+  --gold: #e6c887;
+  --gold-foreground: #2b3f52;
+  --ocean: #8fb0d6;
+  --blossom: #eebfca;
+  --sage: #b9c8a6;
   --night: #0e1a33;
 }
 

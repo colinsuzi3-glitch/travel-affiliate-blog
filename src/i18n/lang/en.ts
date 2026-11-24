@@ -7,6 +7,7 @@ export default {
     tags: "Topics",
     about: "About",
     archives: "Archives",
+    guides: "Guides",
     search: "Search",
   },
   post: {

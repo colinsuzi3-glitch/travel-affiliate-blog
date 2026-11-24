@@ -66,6 +66,11 @@ const gearGuides = [
     text: "Carry-on backpacks, weekender bags, packing cubes and the clear liquids bag: what fits, what is allowed and what is worth carrying.",
     tint: "bg-muted text-foreground",
   },
+  {
+    title: "Worth saving for",
+    text: "A few well-made pieces, like a great carry-on or a handbag that lasts: buy once, buy well, and know what each one is worth.",
+    tint: "bg-gold/20 text-foreground",
+  },
 ];
 ---
 
@@ -153,7 +158,7 @@ const gearGuides = [
       <h3 class="font-display mt-10 text-xl font-medium">
         Gear guides, coming soon
       </h3>
-      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+      <div class="mt-4 grid gap-4 sm:grid-cols-3">
         {
           gearGuides.map(guide => (
             <div class:list={["rounded-2xl p-6", guide.tint]}>

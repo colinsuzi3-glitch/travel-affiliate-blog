@@ -4,7 +4,7 @@ export default defineAstroPaperConfig({
   site: {
     url: "https://travel-affiliate-blog.pages.dev/",
     title: "Travel Well",
-    description: "Stories from the road and practical travel notes for couples who love to explore, notice beauty and meet people along the way.",
+    description: "Stories from the road and practical travel notes for those who love to explore, notice beauty and meet people along the way.",
     author: "Colin Paixao",
     profile: "https://travel-affiliate-blog.pages.dev/",
     ogImage: "default-og.jpg",

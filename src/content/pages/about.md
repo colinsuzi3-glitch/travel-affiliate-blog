@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "About Travel Well: stories from the road and practical travel notes for couples who love to explore."
+description: "About Travel Well: stories from the road and practical travel notes for those who love to explore."
 ---
 
 **Travel Well** is a journal for people who want to travel with an open heart: to reach out to others, notice the beauty around them and stay curious about new food, music and culture.

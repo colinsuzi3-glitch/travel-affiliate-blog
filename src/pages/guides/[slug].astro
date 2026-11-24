@@ -140,6 +140,14 @@ const guidePicks = getPicks(guide.slug);
           <div class="mt-4 grid gap-4 md:grid-cols-2">
             {guidePicks.map(pick => (
               <div class="border-border rounded-2xl border p-6">
+                {pick.imageUrl && (
+                  <img
+                    src={pick.imageUrl}
+                    alt={pick.name}
+                    loading="lazy"
+                    class="mb-4 aspect-4/3 w-full rounded-xl object-contain"
+                  />
+                )}
                 <p class="text-muted-foreground text-xs font-medium">
                   {tierLabels[pick.tier].name} · {pick.item}
                 </p>

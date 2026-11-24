@@ -2,11 +2,11 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://pages.dev/",
+    url: "https://travel-affiliate-blog.pages.dev/",
     title: "Travelling well",
     description: "Real stories from travel paired with proven and tested travel gear, packing systems, and compact beauty and health products to help you travel well",
     author: "Colin Paixao",
-    profile: "https://satna.ing",
+    profile: "https://travel-affiliate-blog.pages.dev/",
     ogImage: "default-og.jpg",
     lang: "en",
     timezone: "America/Edmonton",
@@ -23,6 +23,7 @@ export default defineAstroPaperConfig({
     showBackButton: true,
     editPost: {
       enabled: false,
+      text: "Edit page",
       url: "https://github.com",
     },
     search: "pagefind",

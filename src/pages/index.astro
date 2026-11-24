@@ -54,6 +54,19 @@ const doors = [
     alt: "Three friends in white robes laughing together beside a pool",
   },
 ];
+
+const gearGuides = [
+  {
+    title: "In the air",
+    text: "Neck support, sleep masks, compression socks, hand wipes and the small comforts that make a long flight easier.",
+    tint: "bg-sage/25 text-foreground",
+  },
+  {
+    title: "Bags and packing",
+    text: "Carry-on backpacks, weekender bags, packing cubes and the clear liquids bag: what fits, what is allowed and what is worth carrying.",
+    tint: "bg-muted text-foreground",
+  },
+];
 ---
 
 <Layout>
@@ -133,6 +146,19 @@ const doors = [
                 <h3 class="font-display text-2xl font-medium">{door.title}</h3>
                 <p class="mt-2 text-sm leading-relaxed">{door.text}</p>
               </div>
+            </div>
+          ))
+        }
+      </div>
+      <h3 class="font-display mt-10 text-xl font-medium">
+        Gear guides, coming soon
+      </h3>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        {
+          gearGuides.map(guide => (
+            <div class:list={["rounded-2xl p-6", guide.tint]}>
+              <h4 class="font-display text-2xl font-medium">{guide.title}</h4>
+              <p class="mt-2 text-sm leading-relaxed">{guide.text}</p>
             </div>
           ))
         }

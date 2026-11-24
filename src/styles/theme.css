@@ -21,14 +21,14 @@
 :root,
 [data-theme="light"] {
   --background: #fdfaf5;
-  --foreground: #2b3f52;
-  --accent: #2d7d84;
+  --foreground: #3a4257;
+  --accent: #a94f72;
   --accent-foreground: #ffffff;
   --muted: #f6efe2;
   --muted-foreground: #566a78;
   --border: #ece3d3;
   --gold: #e6c887;
-  --gold-foreground: #2b3f52;
+  --gold-foreground: #3a4257;
   --ocean: #8fb0d6;
   --blossom: #eebfca;
   --sage: #b9c8a6;

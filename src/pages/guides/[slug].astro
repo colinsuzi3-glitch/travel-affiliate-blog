@@ -61,7 +61,7 @@ const guidePicks = getPicks(guide.slug);
         <div class="flex flex-wrap gap-2">
           {
             guide.audience.map(a => (
-              <span class="bg-background/80 rounded-full px-3 py-1 text-xs font-medium">
+              <span class="bg-blossom/40 rounded-full px-3 py-1 text-xs font-medium">
                 {a}
               </span>
             ))
@@ -70,7 +70,8 @@ const guidePicks = getPicks(guide.slug);
         <h1 class="font-display mt-3 text-4xl font-medium sm:text-5xl">
           {guide.title}
         </h1>
-        <p class="mt-3 max-w-xl text-lg leading-relaxed">{guide.intro}</p>
+        <span class="bg-accent/60 mt-4 block h-0.5 w-12 rounded-full"></span>
+        <p class="mt-4 max-w-xl text-lg leading-relaxed">{guide.intro}</p>
       </div>
     </header>
 
@@ -80,7 +81,7 @@ const guidePicks = getPicks(guide.slug);
           <h2 class="font-display text-2xl font-medium">At a glance</h2>
           <div class="border-border mt-3 overflow-x-auto rounded-2xl border">
             <table class="w-full text-left text-sm">
-              <thead class="bg-muted">
+              <thead class="bg-blossom/15">
                 <tr>
                   <th class="px-4 py-3 font-medium">For</th>
                   <th class="px-4 py-3 font-medium">Our pick</th>

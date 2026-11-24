@@ -54,7 +54,7 @@ export const guides: Guide[] = [
     summary:
       "Plug adapters, voltage converters, dual-voltage hair tools, cables and travel-approved power banks.",
     audience: ["For her", "For him"],
-    tint: "bg-ocean/10",
+    tint: "bg-blossom/15",
     intro:
       "Most trouble with electronics abroad comes down to two different things: the shape of the plug and the voltage behind it. Sort those out first and everything else is simple.",
     sections: [
@@ -289,7 +289,7 @@ export const guides: Guide[] = [
     summary:
       "Carry-on backpacks, weekender bags, packing cubes and clear liquids bags.",
     audience: ["For her", "For him"],
-    tint: "bg-muted",
+    tint: "bg-blossom/10",
     intro:
       "The best travel bag is the one that fits your airline's limits, stays comfortable and packs in a way that makes sense when you are tired.",
     sections: [

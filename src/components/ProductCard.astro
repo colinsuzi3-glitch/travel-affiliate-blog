@@ -1,0 +1,79 @@
+---
+interface Props {
+  title: string;
+  brand?: string;
+  badge?: string;
+  image?: string;
+  summary: string;
+  pros?: string[];
+  link: string;
+  buttonText?: string;
+}
+
+const {
+  title,
+  brand,
+  badge = "Carry-On Favorite",
+  image,
+  summary,
+  pros = [],
+  link,
+  buttonText = "Check Current Price",
+} = Astro.props;
+---
+
+<aside class="my-8 rounded-xl border border-border bg-muted/60 p-6 shadow-xs">
+  <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
+    {image && (
+      <div class="w-full shrink-0 sm:w-44">
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          class="aspect-square w-full rounded-lg border border-border bg-background object-cover"
+        />
+      </div>
+    )}
+
+    <div class="flex-1">
+      <div class="mb-2 flex flex-wrap items-center gap-2">
+        <span class="rounded-full bg-accent/15 px-3 py-0.5 text-xs font-semibold tracking-wide text-accent uppercase">
+          {badge}
+        </span>
+        {brand && (
+          <span class="text-xs tracking-wider text-muted-foreground uppercase">
+            {brand}
+          </span>
+        )}
+      </div>
+
+      <h3 class="mt-1 mb-2 text-2xl font-bold text-foreground">
+        {title}
+      </h3>
+
+      <p class="mb-3 text-sm leading-relaxed text-foreground/90">
+        {summary}
+      </p>
+
+      {pros.length > 0 && (
+        <ul class="mb-4 space-y-1 text-sm text-foreground/85">
+          {pros.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="font-bold text-accent">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <a
+        href={link}
+        target="_blank"
+        rel="nofollow sponsored noopener"
+        class="inline-block rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground no-underline transition hover:opacity-90"
+      >
+        {buttonText} →
+      </a>
+    </div>
+  </div>
+</aside>

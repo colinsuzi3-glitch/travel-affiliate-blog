@@ -35,19 +35,19 @@ const storyTypes = [
 
 const doors = [
   {
-    title: "For her",
-    text: "Skin, hair and makeup know-how for the carry-on: what fits, what passes security and what travels well.",
+    title: "With her person",
+    text: "Packing and grooming notes for two: easy shared habits, and simple ways for him to look and feel good about the trip.",
+    tint: "bg-gold/20 text-foreground",
+  },
+  {
+    title: "With her girls",
+    text: "Group trips made easy: who packs what, what clears security, and how to keep everyone's budget and plans happy.",
     tint: "bg-blossom/15 text-foreground",
   },
   {
-    title: "For him",
-    text: "Packing and grooming notes for him: simple, tidy and easy to feel good about.",
+    title: "On her own",
+    text: "Skin, hair and makeup know-how for the carry-on: what fits, what passes security and what travels well.",
     tint: "bg-ocean/10 text-foreground",
-  },
-  {
-    title: "Together",
-    text: "Packing for two: shared bags, small habits and the things that make a trip easier.",
-    tint: "bg-gold/20 text-foreground",
   },
 ];
 ---
@@ -104,9 +104,12 @@ const doors = [
     </section>
 
     <section id="doors" class="pb-10">
-      <h2 class="font-display text-3xl font-medium">Travel notes for two</h2>
+      <h2 class="font-display text-3xl font-medium">
+        However you travel, travel well
+      </h2>
       <p class="text-muted-foreground mt-2 max-w-xl">
-        Practical, plain-spoken notes for her, for him and for the two of you.
+        Practical, plain-spoken notes for trips with a partner, with friends or
+        on your own.
       </p>
       <div class="mt-6 grid gap-4 sm:grid-cols-3">
         {

@@ -17,6 +17,7 @@ export type Pick = {
   why: string; // our own words
   watchFor?: string; // an honest caution, shown with the pick
   asin?: string; // fill in when approved
+  imageUrl?: string; // load from Amazon's own feed at go-live; never a saved copy
 };
 
 // Your Amazon Associates store ID for amazon.ca, e.g. "travelwell-20".

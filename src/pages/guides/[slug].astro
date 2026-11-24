@@ -148,6 +148,18 @@ const guidePicks = getPicks(guide.slug);
                     class="mb-4 aspect-4/3 w-full rounded-xl object-contain"
                   />
                 )}
+                {!pick.imageUrl && DEMO_PICKS && (
+                  <div
+                    class:list={[
+                      "text-muted-foreground mb-4 flex aspect-4/3 w-full items-center justify-center rounded-xl text-xs font-medium",
+                      pick.tier === "small" && "bg-ocean/10",
+                      pick.tier === "upgrade" && "bg-blossom/15",
+                      pick.tier === "saving" && "bg-gold/20",
+                    ]}
+                  >
+                    Product photo
+                  </div>
+                )}
                 <p class="text-muted-foreground text-xs font-medium">
                   {tierLabels[pick.tier].name} · {pick.item}
                 </p>

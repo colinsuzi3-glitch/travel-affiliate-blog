@@ -43,6 +43,8 @@ const doors = [
     title: "With her girls",
     text: "Group trips made easy: who packs what, what clears security, and how to keep everyone's budget and plans happy.",
     tint: "bg-blossom/15 text-foreground",
+    image: "/images/girls-poolside.jpg",
+    alt: "Three friends in white robes laughing together beside a pool",
   },
   {
     title: "On her own",
@@ -114,9 +116,21 @@ const doors = [
       <div class="mt-6 grid gap-4 sm:grid-cols-3">
         {
           doors.map(door => (
-            <div class:list={["rounded-2xl p-6", door.tint]}>
-              <h3 class="font-display text-2xl font-medium">{door.title}</h3>
-              <p class="mt-2 text-sm leading-relaxed">{door.text}</p>
+            <div class:list={["overflow-hidden rounded-2xl", door.tint]}>
+              {door.image && (
+                <img
+                  src={door.image}
+                  width="1248"
+                  height="832"
+                  alt={door.alt}
+                  class="aspect-3/2 w-full object-cover"
+                  loading="lazy"
+                />
+              )}
+              <div class="p-6">
+                <h3 class="font-display text-2xl font-medium">{door.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed">{door.text}</p>
+              </div>
             </div>
           ))
         }

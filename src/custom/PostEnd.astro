@@ -4,8 +4,22 @@
 // here; use `post` to skip some posts. This file is yours: AstroPaper
 // never changes it after release.
 import type { CollectionEntry } from "astro:content";
+import { AFFILIATE_ACTIVE } from "./siteFlags";
 
 type Props = {
   post: CollectionEntry<"posts">;
 };
 ---
+
+{
+  AFFILIATE_ACTIVE && (
+    <aside class="border-border bg-muted/50 my-8 rounded-xl border p-5 text-sm">
+      <p class="text-foreground font-medium">A note on links</p>
+      <p class="text-muted-foreground mt-1 leading-relaxed">
+        Some links in the Journal are affiliate links. If you buy through one,
+        we may earn a small commission at no extra cost to you. It never changes
+        what we recommend.
+      </p>
+    </aside>
+  )
+}

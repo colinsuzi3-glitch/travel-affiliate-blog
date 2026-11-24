@@ -1,29 +1,67 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import Socials from "./Socials.astro";
 import { useTranslations } from "@/i18n";
+import { AFFILIATE_ACTIVE } from "@/custom/siteFlags";
 
 type Props = {
   noMarginTop?: boolean;
+  wide?: boolean;
 } & HTMLAttributes<"footer">;
 
-const { noMarginTop = false, class: className, ...attrs } = Astro.props;
+const {
+  noMarginTop = false,
+  wide = false,
+  class: className,
+  ...attrs
+} = Astro.props;
 
 const t = useTranslations(Astro.currentLocale);
 const currentYear = new Date().getFullYear();
 ---
 
 <footer
-  class:list={["app-layout", { "mt-auto": !noMarginTop }, className]}
+  class:list={[
+    wide ? "mx-auto w-full max-w-6xl px-4" : "app-layout",
+    { "mt-auto": !noMarginTop },
+    className,
+  ]}
   {...attrs}
 >
-  <div
-    class="border-border flex flex-col items-center justify-between border-t py-6 sm:flex-row-reverse sm:py-4"
-  >
-    <Socials />
-    <div class="my-2 flex flex-col items-center whitespace-nowrap sm:flex-row">
-      <span>{t.footer.copyright} &#169; {currentYear}</span>
-      <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
+  <div class="border-border border-t py-8">
+    <div class="flex flex-col gap-6 sm:flex-row sm:justify-between">
+      <div class="max-w-sm">
+        <p class="font-display text-accent text-2xl font-medium">Travel Well</p>
+        <p class="text-muted-foreground mt-2 text-sm leading-relaxed">
+          Stories from the road, and practical notes for those who love to
+          explore.
+        </p>
+      </div>
+      <nav class="text-sm" aria-label="Footer">
+        <ul class="flex gap-x-6 gap-y-2 sm:flex-col">
+          <li><a href="/posts" class="hover:text-accent">Journal</a></li>
+          <li><a href="/about" class="hover:text-accent">About</a></li>
+          {
+            AFFILIATE_ACTIVE && (
+              <li>
+                <a href="/disclosure" class="hover:text-accent">
+                  Affiliate disclosure
+                </a>
+              </li>
+            )
+          }
+        </ul>
+      </nav>
+    </div>
+    <p class="text-muted-foreground mt-6 text-xs leading-relaxed">
+      {
+        AFFILIATE_ACTIVE &&
+          "Affiliate disclosure: some links on this site are affiliate links. If you buy through them, we may earn a commission at no extra cost to you. Prices and availability are set by the retailer. "
+      }
+      Many images on this site are AI-generated illustrations.
+    </p>
+    <div class="text-muted-foreground mt-3 flex flex-wrap items-center text-xs">
+      <span>{t.footer.copyright} &#169; {currentYear} Travel Well</span>
+      <span class="mx-2">|</span>
       <span>{t.footer.allRightsReserved}</span>
     </div>
   </div>

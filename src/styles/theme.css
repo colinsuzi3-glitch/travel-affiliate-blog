@@ -7,28 +7,46 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-ocean: var(--ocean);
+  --color-blossom: var(--blossom);
+  --color-sage: var(--sage);
+  --color-night: var(--night);
   --font-app: var(--font-google-sans-code);
+  --font-display: var(--font-fraunces);
 }
 
-/* Light theme values */
+/* Travel Well: linen base, turquoise brand, gold buttons, night-navy text */
 :root,
 [data-theme="light"] {
-  --background: #FAF7F2;
-  --foreground: #2B2523;
-  --accent: #B85D43;
+  --background: #fbf8f2;
+  --foreground: #14263d;
+  --accent: #1b7f86;
   --accent-foreground: #ffffff;
-  --muted: #FOE8DE;
-  --muted-foreground: #7A6D65;
-  --border: #E2D6C8;
+  --muted: #f1eadb;
+  --muted-foreground: #4f6470;
+  --border: #e7ddcb;
+  --gold: #d4a545;
+  --gold-foreground: #14263d;
+  --ocean: #1f66c7;
+  --blossom: #e56e9a;
+  --sage: #a9b98f;
+  --night: #0e1a33;
 }
 
-/* Dark theme values */
 [data-theme="dark"] {
-  --background: #1F1B19;
-  --foreground: #F5EFE6;
-  --accent: #D98268;
-  --accent-foreground: #ffffff;
-  --muted: #2C2623;
-  --muted-foreground: #BOA399;
-  --border: #3D3531;
+  --background: #0e1a2b;
+  --foreground: #f3eee4;
+  --accent: #4cc3c9;
+  --accent-foreground: #0e1a2b;
+  --muted: #172a40;
+  --muted-foreground: #a9b8c2;
+  --border: #27405a;
+  --gold: #e0b455;
+  --gold-foreground: #0e1a2b;
+  --ocean: #6aa3ee;
+  --blossom: #f08fb2;
+  --sage: #a9b98f;
+  --night: #08111f;
 }

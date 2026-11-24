@@ -5,6 +5,7 @@ export interface UIStrings {
     tags: string;
     about: string;
     archives: string;
+    guides: string;
     search: string;
   };
   post: {

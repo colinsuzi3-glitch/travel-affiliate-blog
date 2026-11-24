@@ -68,11 +68,20 @@ export default defineConfig({
   },
   fonts: [
     {
-      name: "Lora",
+      name: "DM Sans",
       cssVariable: "--font-google-sans-code",
       provider: fontProviders.google(),
+      fallbacks: ["sans-serif"],
+      weights: [400, 500, 700],
+      styles: ["normal", "italic"],
+      formats: ["woff", "ttf"],
+    },
+    {
+      name: "Fraunces",
+      cssVariable: "--font-fraunces",
+      provider: fontProviders.google(),
       fallbacks: ["serif"],
-      weights: [400, 500, 600, 700],
+      weights: [400, 500, 600],
       styles: ["normal", "italic"],
       formats: ["woff", "ttf"],
     },

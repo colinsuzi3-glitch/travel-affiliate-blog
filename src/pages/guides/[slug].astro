@@ -5,6 +5,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { guides, tierLabels } from "@/custom/guides";
 import type { Guide } from "@/custom/guides";
+import { getPicks, amazonUrl } from "@/custom/picks";
 import config from "@/config";
 
 export function getStaticPaths() {
@@ -19,6 +20,7 @@ const locale = Astro.currentLocale ?? config.site.lang;
 const others = guides.filter(g => g.slug !== guide.slug).slice(0, 3);
 const tierKeys = ["small", "upgrade", "saving"] as const;
 const visibleTiers = tierKeys.filter(key => guide.tiers[key].length > 0);
+const guidePicks = getPicks(guide.slug);
 ---
 
 <Layout
@@ -119,6 +121,45 @@ const visibleTiers = tierKeys.filter(key => guide.tiers[key].length > 0);
         }
       </div>
     </section>
+
+    {
+      guidePicks.length > 0 && (
+        <section class="mt-12">
+          <h2 class="font-display text-2xl font-medium">Our picks</h2>
+          <p class="text-muted-foreground mt-2 max-w-2xl text-sm leading-relaxed">
+            As an Amazon Associate I earn from qualifying purchases. Links below
+            are affiliate links. Prices change, so check the current price on
+            the retailer's page.
+          </p>
+          <div class="mt-4 grid gap-4 md:grid-cols-2">
+            {guidePicks.map(pick => (
+              <div class="border-border rounded-2xl border p-6">
+                <p class="text-muted-foreground text-xs font-medium">
+                  {tierLabels[pick.tier].name} · {pick.item}
+                </p>
+                <h3 class="font-display mt-1 text-xl font-medium">
+                  {pick.name}
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed">{pick.why}</p>
+                {pick.watchFor && (
+                  <p class="text-muted-foreground mt-2 text-sm leading-relaxed">
+                    Worth knowing: {pick.watchFor}
+                  </p>
+                )}
+                <a
+                  href={amazonUrl(pick.asin as string)}
+                  rel="sponsored nofollow noopener"
+                  target="_blank"
+                  class="bg-gold/40 mt-4 inline-block rounded-full px-4 py-2 text-sm font-medium no-underline"
+                >
+                  See it on Amazon.ca
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     {
       guide.rules && (

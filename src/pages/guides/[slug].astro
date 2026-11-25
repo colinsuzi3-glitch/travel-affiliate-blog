@@ -60,7 +60,6 @@ const guidePicks = getPicks(guide.slug);
         }
         <div class="relative">
           <div class="flex flex-wrap items-center gap-2">
-            <span class="guide-stamp mr-1">No. {guide.number}</span>
             {
               guide.audience.map(a => (
                 <span class="bg-background/70 rounded-full px-3 py-1 text-xs font-medium">
@@ -308,7 +307,6 @@ const guidePicks = getPicks(guide.slug);
                 style={`--guide:${g.color};--guide-ink:${g.ink}`}
                 class="guide guide-wash guide-card block rounded-2xl p-5 no-underline"
               >
-                <span class="guide-stamp">No. {g.number}</span>
                 <h3 class="font-display mt-3 text-xl font-medium">{g.title}</h3>
                 <p class="mt-1 text-sm">{g.summary}</p>
               </a>

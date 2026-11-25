@@ -7,10 +7,10 @@ featured: true
 draft: false
 tags:
   - welcome
-description: Why Travelling Well exists, what you will find here, and how we choose what to share.
+description: Why Traveling Well exists, what you will find here, and how we choose what to share.
 ---
 
-Travelling Well began with a simple belief: the best trips are the ones where you reach out, notice the beauty around you and stay curious enough to try the unfamiliar plate, the unfamiliar song, the unfamiliar street.
+Traveling Well began with a simple belief: the best trips are the ones where you reach out, notice the beauty around you and stay curious enough to try the unfamiliar plate, the unfamiliar song, the unfamiliar street.
 
 This Journal is where those moments will live. Expect short, honest stories about kind strangers, new flavours, music and culture, and the quiet scenery that is easy to miss when you are rushing.
 

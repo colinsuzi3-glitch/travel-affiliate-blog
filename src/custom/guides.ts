@@ -1,4 +1,4 @@
-// Travelling Well guides. Content only: no product names, no prices and no
+// Traveling Well guides. Content only: no product names, no prices and no
 // affiliate links until an affiliate program has approved the site.
 // Rules notes carry a "last checked" date. Re-check before changing a date.
 
@@ -19,7 +19,7 @@ export type Guide = {
   tint: string;
   wonder: string; // one evocative line, no product claims
   number: string; // passport stamp number
-  color: string; // destination colour
+  color: string; // destination color
   ink: string; // deeper shade for text on light backgrounds
   intro: string;
   sections: { heading: string; points: string[] }[];
@@ -131,7 +131,7 @@ export const guides: Guide[] = [
       {
         heading: "Make it fit the 1 L bag",
         points: [
-          "Decant favourites into 100 ml containers, or buy travel sizes.",
+          "Decant favorites into 100 ml containers, or buy travel sizes.",
           "Solid and stick formats, such as sunscreen sticks, cleansing bars and solid moisturizers, skip the liquid rule altogether.",
           "Keep the bag at the top of your carry-on so it comes out quickly at security.",
         ],
@@ -176,7 +176,7 @@ export const guides: Guide[] = [
     imagePosition: "center 65%",
     title: "Hair care",
     summary:
-      "Hair-type specific care for curls and coils, straight and fine hair, colour-treated hair and short hair.",
+      "Hair-type specific care for curls and coils, straight and fine hair, color-treated hair and short hair.",
     audience: ["For her", "For him"],
     tint: "bg-gold/20",
     number: "03",
@@ -192,7 +192,7 @@ export const guides: Guide[] = [
         points: [
           "Curly and coily hair: moisture comes first. A leave-in conditioner, a detangling tool and a satin cap or scarf cover most needs.",
           "Straight and fine hair: lighter products, so it does not go flat in humid weather.",
-          "Colour-treated hair: a gentle shampoo and a heat protectant, especially in strong sun.",
+          "Color-treated hair: a gentle shampoo and a heat protectant, especially in strong sun.",
           "Short hair and beards: a compact balm or oil and a small comb.",
         ],
       },
@@ -246,7 +246,7 @@ export const guides: Guide[] = [
         heading: "What to look for",
         points: [
           "Fabrics that resist creases and dry overnight, such as technical blends, merino and linen blends.",
-          "A small colour palette so every top works with every bottom.",
+          "A small color palette so every top works with every bottom.",
           "One packable layer for cold cabins and cool evenings.",
           "Shoes that cover walking, dinner and the beach.",
         ],

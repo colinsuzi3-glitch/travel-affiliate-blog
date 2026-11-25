@@ -159,7 +159,7 @@ export const picks: Record<string, Pick[]> = {
       "small",
       "A refillable set of 100 ml bottles",
       "18-pack silicone travel bottles",
-      "Leak-resistant 100 ml bottles to decant your own favourites."
+      "Leak-resistant 100 ml bottles to decant your own favorites."
     ),
   ],
   "hair-care": [

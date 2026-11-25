@@ -38,7 +38,7 @@
   scroll-margin-block: 1rem;
 }
 
-/* Passport look: each guide carries its own destination colour. */
+/* Passport look: each guide carries its own destination color. */
 .guide {
   --guide-wash: color-mix(in srgb, var(--guide) 20%, var(--background));
   --guide-text: var(--guide-ink);
@@ -65,7 +65,7 @@
   text-transform: uppercase;
   transform: rotate(-3deg);
 }
-/* Postcard: soft colour edge on top, dotted route line below the title */
+/* Postcard: soft color edge on top, dotted route line below the title */
 .guide-card {
   border-top: 5px solid var(--guide);
 }

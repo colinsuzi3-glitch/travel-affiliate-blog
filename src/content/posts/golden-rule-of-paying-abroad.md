@@ -22,4 +22,6 @@ When you choose your home currency, you’re agreeing to something called Dynami
 - Watch the wording: Some terminals try to nudge you into the worse rate with a big green button that says "Accept Conversion." Always hit "Decline Conversion" or "Pay Without Conversion."
 - Use the same rule at ATMs: If a cash machine offers to lock in a "guaranteed" exchange rate in your home currency, decline it and let your own bank handle the math.
 
+**This happened to me.** On one of my trips in South America, I always chose to pay in Canadian currency, until I realized I was paying huge conversion fees to the owner of the payment machine. At first I thought it was a hidden service charge. Later I found out it was their sneaky way of charging a fee to convert my Canadian dollars into the local currency. So beware.
+
 It takes two seconds at the counter, requires zero extra effort, and easily saves you the cost of a few extra caipirinhas—or a nice dinner—over the course of a trip.

@@ -6,7 +6,6 @@ import Footer from "@/components/Footer.astro";
 import { guides, tierLabels } from "@/custom/guides";
 import type { Guide } from "@/custom/guides";
 import { getPicks, amazonUrl } from "@/custom/picks";
-import { DEMO_PICKS } from "@/custom/siteFlags";
 import config from "@/config";
 
 export function getStaticPaths() {
@@ -98,11 +97,7 @@ const guidePicks = getPicks(guide.slug);
         guidePicks.length > 0 && (
           <section class="mt-8">
             <h2 class="font-display text-3xl font-medium">Our picks</h2>
-            {DEMO_PICKS && (
-              <p class="bg-gold/30 mt-2 inline-block rounded-full px-3 py-1 text-xs font-medium">
-                Demo preview: product links are not live
-              </p>
-            )}
+
             <p class="text-muted-foreground mt-2 max-w-2xl text-sm leading-relaxed">
               As an Amazon Associate I earn from qualifying purchases. Links
               below are affiliate links. Prices change, so check the current
@@ -111,11 +106,6 @@ const guidePicks = getPicks(guide.slug);
             <div class="mt-4 columns-1 gap-4 sm:columns-2 lg:columns-3">
               {guidePicks.map(pick => (
                 <div class="border-border guide-card mb-4 break-inside-avoid rounded-2xl border p-5">
-                  {!pick.imageUrl && DEMO_PICKS && (
-                    <div class="guide-wash text-muted-foreground mb-4 flex aspect-2/3 w-full items-center justify-center rounded-xl text-xs font-medium">
-                      Product photo
-                    </div>
-                  )}
                   {pick.imageUrl && (
                     <img
                       src={pick.imageUrl}

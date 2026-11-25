@@ -6,7 +6,7 @@
 //   from its own product data, so we describe each pick in our own words.
 // - Every pick needs a real ASIN from Associate Central and a tagged link.
 // - Say plainly whether we have tried the item.
-import { AFFILIATE_ACTIVE, DEMO_PICKS } from "./siteFlags";
+import { AFFILIATE_ACTIVE } from "./siteFlags";
 
 export type PickTier = "small" | "upgrade" | "saving";
 
@@ -263,7 +263,6 @@ export const picks: Record<string, Pick[]> = {
 
 export function getPicks(slug: string): Pick[] {
   const list = picks[slug] ?? [];
-  if (DEMO_PICKS) return list;
   if (!AFFILIATE_ACTIVE) return [];
   if (AMAZON_TAG.startsWith("REPLACE")) {
     throw new Error(
@@ -280,6 +279,6 @@ export function getPicks(slug: string): Pick[] {
 }
 
 export function amazonUrl(asin?: string): string {
-  if (DEMO_PICKS || !asin) return "#";
+  if (!asin) return "#";
   return `https://www.amazon.ca/dp/${asin}?tag=${AMAZON_TAG}`;
 }

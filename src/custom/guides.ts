@@ -172,8 +172,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "hair-care",
-    image: "/images/white-coneflower.jpg",
-    imagePosition: "center 40%",
+    image: "/images/hair-brushing.jpg",
+    imagePosition: "center 38%",
     title: "Hair care",
     summary:
       "Hair-type specific care for curls and coils, straight and fine hair, color-treated hair and short hair.",

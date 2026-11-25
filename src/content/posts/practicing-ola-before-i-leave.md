@@ -16,4 +16,6 @@ My Portuguese is somewhere in the middle: good enough to follow along, not yet g
 
 I don't want to arrive as a visitor who points at a menu. I want to say good morning, ask a question and listen to the answer. If you're traveling somewhere new, even a few weeks of daily practice changes how you're met, and how much you notice.
 
+It is amazing to see how locals appreciate the effort to say even simple things in their language. Besides the everyday hello, goodbye and thank you, try to memorize one or two compliments that you can pass on to brighten someone's day!
+
 What's one phrase you always learn before you land?

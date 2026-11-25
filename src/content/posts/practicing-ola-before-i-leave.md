@@ -1,6 +1,6 @@
 ---
 author: Colin Paixao
-pubDatetime: 2026-11-25T04:00:00.000Z
+pubDatetime: 2026-11-27T15:00:00.000Z
 title: Practicing "Olá" before I leave
 slug: practicing-ola-before-i-leave
 featured: false

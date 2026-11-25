@@ -15,4 +15,4 @@ I'm Colin, a photographer at heart, and I started Traveling Well to share the sm
 
 ## Images
 
-Many images on this site are AI-generated illustrations. We will label real photographs from our own travels as they are added.
+The photographs at the top of each travel guide are my own, taken in Brazil and Hungary. Some other images on the site are AI-generated illustrations, and I will swap in more of my own photos as I go.

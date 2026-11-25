@@ -17,6 +17,10 @@ export type Guide = {
   summary: string;
   audience: string[];
   tint: string;
+  wonder: string; // one evocative line, no product claims
+  number: string; // passport stamp number
+  color: string; // destination colour
+  ink: string; // deeper shade for text on light backgrounds
   intro: string;
   sections: { heading: string; points: string[] }[];
   forHer?: string[];
@@ -55,6 +59,11 @@ export const guides: Guide[] = [
       "Plug adapters, voltage converters, dual-voltage hair tools, cables and travel-approved power banks.",
     audience: ["For her", "For him"],
     tint: "bg-blossom/15",
+    number: "01",
+    wonder:
+      "Somewhere there is a hotel room with a view you have never seen. Be ready to stay a little longer.",
+    color: "#4a74bd",
+    ink: "#2a4a8a",
     intro:
       "Most trouble with electronics abroad comes down to two different things: the shape of the plug and the voltage behind it. Sort those out first and everything else is simple.",
     sections: [
@@ -111,6 +120,11 @@ export const guides: Guide[] = [
       "Moisturizer, sunscreen, after-sun care and the small routines that keep your skin well on the road.",
     audience: ["For her", "For him"],
     tint: "bg-blossom/15",
+    number: "02",
+    wonder:
+      "The best afternoons happen outside. Let the sun be the only thing you are thinking about.",
+    color: "#e8a838",
+    ink: "#855400",
     intro:
       "Flying dries skin out, and sun and salt water finish the job. A short routine in small containers is enough.",
     sections: [
@@ -165,6 +179,11 @@ export const guides: Guide[] = [
       "Hair-type specific care for curls and coils, straight and fine hair, colour-treated hair and short hair.",
     audience: ["For her", "For him"],
     tint: "bg-gold/20",
+    number: "03",
+    wonder:
+      "Salt air, strange water, a morning that starts at dawn. Arrive looking and feeling like yourself.",
+    color: "#d25f92",
+    ink: "#a1346a",
     intro:
       "Humidity, hard water and cabin air all change how hair behaves. The right few products, matched to your hair type, beat a bag full of everything.",
     sections: [
@@ -215,6 +234,11 @@ export const guides: Guide[] = [
       "Light, wrinkle-resistant layers and swimwear that take up little space and still look good.",
     audience: ["For her", "For him"],
     tint: "bg-sage/25",
+    number: "04",
+    wonder:
+      "Pack light enough to say yes to the back street, the ferry, the invitation.",
+    color: "#cb6e45",
+    ink: "#9a4524",
     intro:
       "Pack for the whole trip in one carry-on by choosing pieces that mix, dry quickly and need no ironing.",
     sections: [
@@ -256,6 +280,11 @@ export const guides: Guide[] = [
       "Neck support, eye masks, compression socks, wipes and the small comforts that make a long flight easier.",
     audience: ["For her", "For him"],
     tint: "bg-sage/25",
+    number: "05",
+    wonder:
+      "The journey begins long before you land. Make the hours between places part of the story.",
+    color: "#35a3a8",
+    ink: "#146a70",
     intro:
       "A few small things change how you feel when you land: support for your neck, darkness, warmth and clean hands.",
     sections: [
@@ -290,6 +319,11 @@ export const guides: Guide[] = [
       "Carry-on backpacks, weekender bags, packing cubes and clear liquids bags.",
     audience: ["For her", "For him"],
     tint: "bg-blossom/10",
+    number: "06",
+    wonder:
+      "Everything has its place, so your head can be somewhere else: wandering.",
+    color: "#62a054",
+    ink: "#3a6e30",
     intro:
       "The best travel bag is the one that fits your airline's limits, stays comfortable and packs in a way that makes sense when you are tired.",
     sections: [
@@ -326,6 +360,11 @@ export const guides: Guide[] = [
       "A few well-made pieces, like an exceptional carry-on or a handbag that lasts: buy once, buy well.",
     audience: ["For her", "For him"],
     tint: "bg-gold/20",
+    number: "07",
+    wonder:
+      "A few things are worth waiting for, the ones that go with you to a hundred new places.",
+    color: "#8656a0",
+    ink: "#5e3270",
     intro:
       "A few pieces earn their place by lasting years. This guide is about how to decide, and it is fine to decide not to.",
     sections: [

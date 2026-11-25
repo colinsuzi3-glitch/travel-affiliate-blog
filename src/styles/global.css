@@ -37,3 +37,46 @@
 :target {
   scroll-margin-block: 1rem;
 }
+
+/* Passport look: each guide carries its own destination colour. */
+.guide {
+  --guide-wash: color-mix(in srgb, var(--guide) 20%, var(--background));
+  --guide-text: var(--guide-ink);
+}
+[data-theme="dark"] .guide {
+  --guide-wash: color-mix(in srgb, var(--guide) 24%, var(--background));
+  --guide-text: color-mix(in srgb, var(--guide) 60%, white);
+}
+.guide-wash {
+  background: var(--guide-wash);
+}
+.guide-text {
+  color: var(--guide-text);
+}
+.guide-stamp {
+  display: inline-block;
+  border: 1.5px dashed var(--guide-text);
+  color: var(--guide-text);
+  border-radius: 0.5rem;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+/* Postcard: soft colour edge on top, dotted route line below the title */
+.guide-card {
+  border-top: 5px solid var(--guide);
+}
+.guide-route {
+  display: block;
+  height: 0;
+  width: 5rem;
+  border-top: 2px dotted var(--guide);
+}
+.guide-note {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--guide-text);
+}

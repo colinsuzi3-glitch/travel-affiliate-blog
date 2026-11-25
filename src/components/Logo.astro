@@ -1,0 +1,53 @@
+---
+type Props = { class?: string };
+const { class: className } = Astro.props;
+const colors = [
+  "#4a74bd",
+  "#e8a838",
+  "#d25f92",
+  "#cb6e45",
+  "#35a3a8",
+  "#62a054",
+  "#8656a0",
+];
+---
+
+<svg
+  viewBox="0 0 240 240"
+  role="img"
+  aria-label="Traveling Well"
+  class={className}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  {
+    colors.map((fill, i) => (
+      <circle
+        cx="120"
+        cy="28"
+        r="11"
+        fill={fill}
+        transform={`rotate(${(i * 360) / 7} 120 120)`}
+      />
+    ))
+  }
+  <text
+    x="120"
+    y="118"
+    text-anchor="middle"
+    font-size="38"
+    letter-spacing="0.5"
+    fill="currentColor"
+    class="font-display"
+    style="font-weight: 500">Traveling</text
+  >
+  <text
+    x="120"
+    y="158"
+    text-anchor="middle"
+    font-size="38"
+    font-style="italic"
+    fill="currentColor"
+    class="font-display"
+    style="font-weight: 500">Well</text
+  >
+</svg>

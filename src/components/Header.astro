@@ -8,6 +8,7 @@ import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
 import IconX from "@/assets/icons/IconX.svg";
 import LinkButton from "./LinkButton.astro";
+import Logo from "./Logo.astro";
 import { stripBase, stripLocale } from "@/utils/withBase";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
@@ -53,26 +54,15 @@ const isActive = (path: string) => {
 >
   <a
     href={getRelativeLocaleUrl(locale, "")}
-    class="shrink-0 self-center py-3"
+    class="shrink-0 self-center py-2"
     aria-label={site.title}
   >
-    <img
-      src="/images/logo-mark.png"
-      alt=""
-      width="489"
-      height="560"
-      class="h-32 w-auto rounded-xl sm:h-56"
-    />
+    <Logo class="text-foreground h-36 w-auto sm:h-56" />
   </a>
   <div
     class="border-border bg-background relative flex min-w-0 flex-1 items-baseline justify-between border-b py-4 sm:items-center sm:py-6"
   >
-    <a
-      href={getRelativeLocaleUrl(locale, "")}
-      class="font-display absolute py-1 text-3xl leading-8 font-medium whitespace-nowrap sm:static sm:my-auto sm:text-6xl sm:leading-none"
-    >
-      {site.title}
-    </a>
+    <span class="sr-only">{site.title}</span>
     <nav
       id="nav-menu"
       class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"

@@ -77,11 +77,80 @@ const guidePicks = getPicks(guide.slug);
             {guide.wonder}
           </p>
           <p class="mt-4 max-w-xl text-base leading-relaxed">{guide.intro}</p>
+          {
+            guide.image && (
+              <a
+                href={`https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(Astro.url.href)}&media=${encodeURIComponent(new URL(guide.image, Astro.url).href)}&description=${encodeURIComponent(`${guide.title}: ${guide.summary}`)}`}
+                target="_blank"
+                rel="noopener"
+                class="bg-accent text-accent-foreground mt-5 mr-3 inline-block rounded-full px-4 py-2 text-sm font-semibold no-underline"
+              >
+                Save to Pinterest
+              </a>
+            )
+          }
           <p class="guide-note mt-4 text-base">
             From one travel heart to another.
           </p>
         </div>
       </header>
+
+      {
+        guidePicks.length > 0 && (
+          <section class="mt-8">
+            <h2 class="font-display text-3xl font-medium">Our picks</h2>
+            {DEMO_PICKS && (
+              <p class="bg-gold/30 mt-2 inline-block rounded-full px-3 py-1 text-xs font-medium">
+                Demo preview: product links are not live
+              </p>
+            )}
+            <p class="text-muted-foreground mt-2 max-w-2xl text-sm leading-relaxed">
+              As an Amazon Associate I earn from qualifying purchases. Links
+              below are affiliate links. Prices change, so check the current
+              price on the retailer's page.
+            </p>
+            <div class="mt-4 columns-1 gap-4 sm:columns-2 lg:columns-3">
+              {guidePicks.map(pick => (
+                <div class="border-border guide-card mb-4 break-inside-avoid rounded-2xl border p-5">
+                  {!pick.imageUrl && DEMO_PICKS && (
+                    <div class="guide-wash text-muted-foreground mb-4 flex aspect-2/3 w-full items-center justify-center rounded-xl text-xs font-medium">
+                      Product photo
+                    </div>
+                  )}
+                  {pick.imageUrl && (
+                    <img
+                      src={pick.imageUrl}
+                      alt={pick.name}
+                      loading="lazy"
+                      class="mb-4 aspect-2/3 w-full rounded-xl object-contain"
+                    />
+                  )}
+                  <p class="guide-text text-xs font-semibold">
+                    {tierLabels[pick.tier].name} · {pick.item}
+                  </p>
+                  <h3 class="font-display mt-1 text-xl font-medium">
+                    {pick.name}
+                  </h3>
+                  <p class="mt-2 text-sm leading-relaxed">{pick.why}</p>
+                  {pick.watchFor && (
+                    <p class="text-muted-foreground mt-2 text-sm leading-relaxed">
+                      Worth knowing: {pick.watchFor}
+                    </p>
+                  )}
+                  <a
+                    href={amazonUrl(pick.asin as string)}
+                    rel="sponsored nofollow noopener"
+                    target="_blank"
+                    class="guide-wash guide-text mt-4 inline-block rounded-full px-4 py-2 text-sm font-semibold no-underline"
+                  >
+                    See it on Amazon.ca
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+        )
+      }
 
       {
         guidePicks.length > 0 && (
@@ -113,49 +182,56 @@ const guidePicks = getPicks(guide.slug);
         )
       }
 
-      <div class="mt-10 max-w-3xl">
-        {
-          guide.sections.map(section => (
-            <section class="mb-8">
-              <h2 class="font-display text-2xl font-medium">
-                {section.heading}
-              </h2>
-              <ul class="mt-3 list-disc space-y-2 pl-5 leading-relaxed">
-                {section.points.map(point => (
-                  <li>{point}</li>
-                ))}
-              </ul>
-            </section>
-          ))
-        }
+      <details class="mt-10 max-w-3xl">
+        <summary
+          class="guide-text font-display cursor-pointer text-2xl font-medium"
+        >
+          Good to know before you buy
+        </summary>
+        <div class="mt-4">
+          {
+            guide.sections.map(section => (
+              <section class="mb-8">
+                <h2 class="font-display text-2xl font-medium">
+                  {section.heading}
+                </h2>
+                <ul class="mt-3 list-disc space-y-2 pl-5 leading-relaxed">
+                  {section.points.map(point => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </section>
+            ))
+          }
 
-        {
-          (guide.forHer || guide.forHim) && (
-            <div class="mb-8 grid gap-4 sm:grid-cols-2">
-              {guide.forHer && (
-                <div class="guide-wash rounded-2xl p-6">
-                  <h2 class="font-display text-xl font-medium">For her</h2>
-                  <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
-                    {guide.forHer.map(item => (
-                      <li>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {guide.forHim && (
-                <div class="bg-muted rounded-2xl p-6">
-                  <h2 class="font-display text-xl font-medium">For him</h2>
-                  <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
-                    {guide.forHim.map(item => (
-                      <li>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          )
-        }
-      </div>
+          {
+            (guide.forHer || guide.forHim) && (
+              <div class="mb-8 grid gap-4 sm:grid-cols-2">
+                {guide.forHer && (
+                  <div class="guide-wash rounded-2xl p-6">
+                    <h2 class="font-display text-xl font-medium">For her</h2>
+                    <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+                      {guide.forHer.map(item => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {guide.forHim && (
+                  <div class="bg-muted rounded-2xl p-6">
+                    <h2 class="font-display text-xl font-medium">For him</h2>
+                    <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm leading-relaxed">
+                      {guide.forHim.map(item => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )
+          }
+        </div>
+      </details>
 
       <section class="mt-2">
         <h2 class="font-display text-2xl font-medium">
@@ -186,63 +262,6 @@ const guidePicks = getPicks(guide.slug);
           }
         </div>
       </section>
-
-      {
-        guidePicks.length > 0 && (
-          <section class="mt-12">
-            <h2 class="font-display text-2xl font-medium">Our picks</h2>
-            {DEMO_PICKS && (
-              <p class="bg-gold/30 mt-2 inline-block rounded-full px-3 py-1 text-xs font-medium">
-                Demo preview: product links are not live
-              </p>
-            )}
-            <p class="text-muted-foreground mt-2 max-w-2xl text-sm leading-relaxed">
-              As an Amazon Associate I earn from qualifying purchases. Links
-              below are affiliate links. Prices change, so check the current
-              price on the retailer's page.
-            </p>
-            <div class="mt-4 grid gap-4 md:grid-cols-2">
-              {guidePicks.map(pick => (
-                <div class="border-border guide-card rounded-2xl border p-6">
-                  {!pick.imageUrl && DEMO_PICKS && (
-                    <div class="guide-wash text-muted-foreground mb-4 flex aspect-4/3 w-full items-center justify-center rounded-xl text-xs font-medium">
-                      Product photo
-                    </div>
-                  )}
-                  {pick.imageUrl && (
-                    <img
-                      src={pick.imageUrl}
-                      alt={pick.name}
-                      loading="lazy"
-                      class="mb-4 aspect-4/3 w-full rounded-xl object-contain"
-                    />
-                  )}
-                  <p class="guide-text text-xs font-semibold">
-                    {tierLabels[pick.tier].name} · {pick.item}
-                  </p>
-                  <h3 class="font-display mt-1 text-xl font-medium">
-                    {pick.name}
-                  </h3>
-                  <p class="mt-2 text-sm leading-relaxed">{pick.why}</p>
-                  {pick.watchFor && (
-                    <p class="text-muted-foreground mt-2 text-sm leading-relaxed">
-                      Worth knowing: {pick.watchFor}
-                    </p>
-                  )}
-                  <a
-                    href={amazonUrl(pick.asin as string)}
-                    rel="sponsored nofollow noopener"
-                    target="_blank"
-                    class="guide-wash guide-text mt-4 inline-block rounded-full px-4 py-2 text-sm font-semibold no-underline"
-                  >
-                    See it on Amazon.ca
-                  </a>
-                </div>
-              ))}
-            </div>
-          </section>
-        )
-      }
 
       {
         guidePicks.length > 0 && (

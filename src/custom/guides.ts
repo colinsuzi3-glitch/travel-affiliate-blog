@@ -113,8 +113,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "skin-and-sun",
-    image: "/images/bahia-coast.jpg",
-    imagePosition: "center 55%",
+    image: "/images/beach-bahia.jpg",
+    imagePosition: "center 60%",
     title: "Skin and sun",
     summary:
       "Moisturizer, sunscreen, after-sun care and the small routines that keep your skin well on the road.",

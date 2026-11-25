@@ -1,4 +1,4 @@
-// Travel Well guides. Content only: no product names, no prices and no
+// Traveling Well guides. Content only: no product names, no prices and no
 // affiliate links until an affiliate program has approved the site.
 // Rules notes carry a "last checked" date. Re-check before changing a date.
 
@@ -12,9 +12,15 @@ export type RuleNote = {
 export type Guide = {
   slug: string;
   title: string;
+  image?: string; // faded header photo
+  imagePosition?: string; // CSS object-position
   summary: string;
   audience: string[];
   tint: string;
+  wonder: string; // one evocative line, no product claims
+  number: string; // passport stamp number
+  color: string; // destination color
+  ink: string; // deeper shade for text on light backgrounds
   intro: string;
   sections: { heading: string; points: string[] }[];
   forHer?: string[];
@@ -46,11 +52,18 @@ const batteryRule: RuleNote = {
 export const guides: Guide[] = [
   {
     slug: "power-and-plugs",
+    image: "/images/carryon-bag.jpg",
+    imagePosition: "center 30%",
     title: "Power and plugs",
     summary:
       "Plug adapters, voltage converters, dual-voltage hair tools, cables and travel-approved power banks.",
     audience: ["For her", "For him"],
-    tint: "bg-ocean/10",
+    tint: "bg-blossom/15",
+    number: "01",
+    wonder:
+      "Somewhere there is a hotel room with a view you have never seen. Be ready to stay a little longer.",
+    color: "#4a74bd",
+    ink: "#2a4a8a",
     intro:
       "Most trouble with electronics abroad comes down to two different things: the shape of the plug and the voltage behind it. Sort those out first and everything else is simple.",
     sections: [
@@ -100,18 +113,25 @@ export const guides: Guide[] = [
   },
   {
     slug: "skin-and-sun",
+    image: "/images/girls-poolside.jpg",
+    imagePosition: "center 35%",
     title: "Skin and sun",
     summary:
       "Moisturizer, sunscreen, after-sun care and the small routines that keep your skin well on the road.",
     audience: ["For her", "For him"],
     tint: "bg-blossom/15",
+    number: "02",
+    wonder:
+      "The best afternoons happen outside. Let the sun be the only thing you are thinking about.",
+    color: "#e8a838",
+    ink: "#855400",
     intro:
       "Flying dries skin out, and sun and salt water finish the job. A short routine in small containers is enough.",
     sections: [
       {
         heading: "Make it fit the 1 L bag",
         points: [
-          "Decant favourites into 100 ml containers, or buy travel sizes.",
+          "Decant favorites into 100 ml containers, or buy travel sizes.",
           "Solid and stick formats, such as sunscreen sticks, cleansing bars and solid moisturizers, skip the liquid rule altogether.",
           "Keep the bag at the top of your carry-on so it comes out quickly at security.",
         ],
@@ -152,11 +172,18 @@ export const guides: Guide[] = [
   },
   {
     slug: "hair-care",
+    image: "/images/girls-poolside.jpg",
+    imagePosition: "center 65%",
     title: "Hair care",
     summary:
-      "Hair-type specific care for curls and coils, straight and fine hair, colour-treated hair and short hair.",
+      "Hair-type specific care for curls and coils, straight and fine hair, color-treated hair and short hair.",
     audience: ["For her", "For him"],
     tint: "bg-gold/20",
+    number: "03",
+    wonder:
+      "Salt air, strange water, a morning that starts at dawn. Arrive looking and feeling like yourself.",
+    color: "#d25f92",
+    ink: "#a1346a",
     intro:
       "Humidity, hard water and cabin air all change how hair behaves. The right few products, matched to your hair type, beat a bag full of everything.",
     sections: [
@@ -165,7 +192,7 @@ export const guides: Guide[] = [
         points: [
           "Curly and coily hair: moisture comes first. A leave-in conditioner, a detangling tool and a satin cap or scarf cover most needs.",
           "Straight and fine hair: lighter products, so it does not go flat in humid weather.",
-          "Colour-treated hair: a gentle shampoo and a heat protectant, especially in strong sun.",
+          "Color-treated hair: a gentle shampoo and a heat protectant, especially in strong sun.",
           "Short hair and beards: a compact balm or oil and a small comb.",
         ],
       },
@@ -200,11 +227,18 @@ export const guides: Guide[] = [
   },
   {
     slug: "clothes-that-pack-small",
+    image: "/images/hammock-porch.jpg",
+    imagePosition: "center 35%",
     title: "Clothes that pack small",
     summary:
       "Light, wrinkle-resistant layers and swimwear that take up little space and still look good.",
     audience: ["For her", "For him"],
     tint: "bg-sage/25",
+    number: "04",
+    wonder:
+      "Pack light enough to say yes to the back street, the ferry, the invitation.",
+    color: "#cb6e45",
+    ink: "#9a4524",
     intro:
       "Pack for the whole trip in one carry-on by choosing pieces that mix, dry quickly and need no ironing.",
     sections: [
@@ -212,7 +246,7 @@ export const guides: Guide[] = [
         heading: "What to look for",
         points: [
           "Fabrics that resist creases and dry overnight, such as technical blends, merino and linen blends.",
-          "A small colour palette so every top works with every bottom.",
+          "A small color palette so every top works with every bottom.",
           "One packable layer for cold cabins and cool evenings.",
           "Shoes that cover walking, dinner and the beach.",
         ],
@@ -239,11 +273,18 @@ export const guides: Guide[] = [
   },
   {
     slug: "in-the-air",
+    image: "/images/beach-calm.jpg",
+    imagePosition: "center 30%",
     title: "In the air",
     summary:
       "Neck support, eye masks, compression socks, wipes and the small comforts that make a long flight easier.",
     audience: ["For her", "For him"],
     tint: "bg-sage/25",
+    number: "05",
+    wonder:
+      "The journey begins long before you land. Make the hours between places part of the story.",
+    color: "#35a3a8",
+    ink: "#146a70",
     intro:
       "A few small things change how you feel when you land: support for your neck, darkness, warmth and clean hands.",
     sections: [
@@ -271,11 +312,18 @@ export const guides: Guide[] = [
   },
   {
     slug: "bags-and-packing",
+    image: "/images/carryon-bag.jpg",
+    imagePosition: "center 70%",
     title: "Bags and packing",
     summary:
       "Carry-on backpacks, weekender bags, packing cubes and clear liquids bags.",
     audience: ["For her", "For him"],
-    tint: "bg-muted",
+    tint: "bg-blossom/10",
+    number: "06",
+    wonder:
+      "Everything has its place, so your head can be somewhere else: wandering.",
+    color: "#62a054",
+    ink: "#3a6e30",
     intro:
       "The best travel bag is the one that fits your airline's limits, stays comfortable and packs in a way that makes sense when you are tired.",
     sections: [
@@ -305,11 +353,18 @@ export const guides: Guide[] = [
   },
   {
     slug: "worth-saving-for",
+    image: "/images/hammock-porch.jpg",
+    imagePosition: "center 65%",
     title: "Worth saving for",
     summary:
       "A few well-made pieces, like an exceptional carry-on or a handbag that lasts: buy once, buy well.",
     audience: ["For her", "For him"],
     tint: "bg-gold/20",
+    number: "07",
+    wonder:
+      "A few things are worth waiting for, the ones that go with you to a hundred new places.",
+    color: "#8656a0",
+    ink: "#5e3270",
     intro:
       "A few pieces earn their place by lasting years. This guide is about how to decide, and it is fine to decide not to.",
     sections: [

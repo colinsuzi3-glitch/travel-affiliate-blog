@@ -17,36 +17,38 @@
   --font-display: var(--font-fraunces);
 }
 
-/* Travel Well: linen base, turquoise brand, gold buttons, night-navy text */
+/* Traveling Well: linen base, turquoise brand, gold buttons, night-navy text */
 :root,
 [data-theme="light"] {
-  --background: #fbf8f2;
-  --foreground: #14263d;
-  --accent: #1b7f86;
+  /* Sand: warm paper, easy on the eyes */
+  --background: #e6dccb;
+  --foreground: #33394c;
+  --accent: #963f60;
   --accent-foreground: #ffffff;
-  --muted: #f1eadb;
-  --muted-foreground: #4f6470;
-  --border: #e7ddcb;
-  --gold: #d4a545;
-  --gold-foreground: #14263d;
-  --ocean: #1f66c7;
-  --blossom: #e56e9a;
-  --sage: #a9b98f;
+  --muted: #efe6d6;
+  --muted-foreground: #4a5262;
+  --border: #d3c7b2;
+  --gold: #e0bd7c;
+  --gold-foreground: #33394c;
+  --ocean: #8fb0d6;
+  --blossom: #e8b9c6;
+  --sage: #b9c8a6;
   --night: #0e1a33;
 }
 
 [data-theme="dark"] {
-  --background: #0e1a2b;
-  --foreground: #f3eee4;
-  --accent: #4cc3c9;
-  --accent-foreground: #0e1a2b;
-  --muted: #172a40;
-  --muted-foreground: #a9b8c2;
-  --border: #27405a;
-  --gold: #e0b455;
-  --gold-foreground: #0e1a2b;
-  --ocean: #6aa3ee;
-  --blossom: #f08fb2;
+  /* Dusk: soft slate evening, no glare */
+  --background: #38435c;
+  --foreground: #f1e9dc;
+  --accent: #f0b3c8;
+  --accent-foreground: #2b3246;
+  --muted: #414d68;
+  --muted-foreground: #c3c9d6;
+  --border: #52607d;
+  --gold: #e6c887;
+  --gold-foreground: #2b3246;
+  --ocean: #8fb0d6;
+  --blossom: #eebfca;
   --sage: #a9b98f;
-  --night: #08111f;
+  --night: #2b3246;
 }

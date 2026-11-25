@@ -92,7 +92,7 @@ const doors = [
             href={getRelativeLocaleUrl(locale, "about")}
             class="border-border hover:border-accent hover:text-accent rounded-full border px-6 py-3 text-sm font-medium no-underline transition-colors"
           >
-            About Travel Well
+            About Traveling Well
           </a>
         </div>
       </div>
@@ -152,13 +152,25 @@ const doors = [
           guides.map(guide => (
             <a
               href={getRelativeLocaleUrl(locale, `guides/${guide.slug}`)}
-              class:list={[
-                "hover:border-accent block rounded-2xl border border-transparent p-5 no-underline transition-colors",
-                guide.tint,
-              ]}
+              style={`--guide:${guide.color};--guide-ink:${guide.ink}`}
+              class="guide guide-wash guide-card hover:border-accent block overflow-hidden rounded-2xl border border-transparent no-underline transition-colors"
             >
-              <h4 class="font-display text-xl font-medium">{guide.title}</h4>
-              <p class="mt-1.5 text-sm leading-relaxed">{guide.summary}</p>
+              {guide.image && (
+                <div class="relative">
+                  <img
+                    src={guide.image}
+                    alt=""
+                    loading="lazy"
+                    class="aspect-4/5 w-full object-cover"
+                    style={`object-position: ${guide.imagePosition ?? "center"}`}
+                  />
+                </div>
+              )}
+              <div class="p-5">
+                <h4 class="font-display text-xl font-medium">{guide.title}</h4>
+                <span class="guide-route mt-2" />
+                <p class="mt-2 text-sm leading-relaxed">{guide.summary}</p>
+              </div>
             </a>
           ))
         }

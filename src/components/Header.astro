@@ -8,6 +8,7 @@ import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
 import IconX from "@/assets/icons/IconX.svg";
 import LinkButton from "./LinkButton.astro";
+import Logo from "./Logo.astro";
 import { stripBase, stripLocale } from "@/utils/withBase";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
@@ -48,18 +49,20 @@ const isActive = (path: string) => {
 <header
   class:list={[
     wide ? "mx-auto w-full max-w-6xl px-4" : "app-layout",
-    "flex flex-col items-center justify-between sm:flex-row",
+    "flex items-stretch gap-3 sm:gap-6",
   ]}
 >
-  <div
-    class="border-border bg-background relative flex w-full items-baseline justify-between border-b py-4 sm:items-center sm:py-6"
+  <a
+    href={getRelativeLocaleUrl(locale, "")}
+    class="shrink-0 self-center py-2"
+    aria-label={site.title}
   >
-    <a
-      href={getRelativeLocaleUrl(locale, "")}
-      class="absolute py-1 text-xl leading-8 font-semibold whitespace-nowrap sm:static sm:my-auto sm:text-2xl sm:leading-none"
-    >
-      {site.title}
-    </a>
+    <Logo class="text-foreground h-36 w-auto sm:h-72" />
+  </a>
+  <div
+    class="border-border bg-background relative flex min-w-0 flex-1 items-baseline justify-between border-b py-4 sm:items-center sm:py-6"
+  >
+    <span class="sr-only">{site.title}</span>
     <nav
       id="nav-menu"
       class="flex w-full flex-col items-center sm:ms-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0"

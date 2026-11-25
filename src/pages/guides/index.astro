@@ -38,14 +38,16 @@ const locale = Astro.currentLocale ?? config.site.lang;
         guides.map(guide => (
           <a
             href={getRelativeLocaleUrl(locale, `guides/${guide.slug}`)}
-            class:list={[
-              "hover:border-accent block rounded-2xl border border-transparent p-6 no-underline transition-colors",
-              guide.tint,
-            ]}
+            style={`--guide:${guide.color};--guide-ink:${guide.ink}`}
+            class="guide guide-wash guide-card hover:border-accent block rounded-2xl border border-transparent p-6 no-underline transition-colors"
           >
-            <h2 class="font-display text-2xl font-medium">{guide.title}</h2>
-            <p class="mt-2 text-sm leading-relaxed">{guide.summary}</p>
-            <span class="text-accent mt-4 inline-block text-sm font-medium">
+            <span class="guide-stamp">No. {guide.number}</span>
+            <h2 class="font-display mt-3 text-2xl font-medium">
+              {guide.title}
+            </h2>
+            <span class="guide-route mt-3" />
+            <p class="mt-3 text-sm leading-relaxed">{guide.summary}</p>
+            <span class="guide-text mt-4 inline-block text-sm font-medium">
               Read the guide
             </span>
           </a>

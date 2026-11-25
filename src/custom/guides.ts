@@ -273,8 +273,8 @@ export const guides: Guide[] = [
   },
   {
     slug: "in-the-air",
-    image: "/images/rio-bay.jpg",
-    imagePosition: "center 50%",
+    image: "/images/window-seat.jpg",
+    imagePosition: "center 42%",
     title: "In the air",
     summary:
       "Neck support, eye masks, compression socks, wipes and the small comforts that make a long flight easier.",

@@ -1,4 +1,4 @@
-// Travel Well guides. Content only: no product names, no prices and no
+// Travelling Well guides. Content only: no product names, no prices and no
 // affiliate links until an affiliate program has approved the site.
 // Rules notes carry a "last checked" date. Re-check before changing a date.
 

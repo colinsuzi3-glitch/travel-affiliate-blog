@@ -1,11 +1,11 @@
 ---
 title: "About"
-description: "About Travel Well: stories from the road and practical travel notes for those who love to explore."
+description: "About Travelling Well: stories from the road and practical travel notes for those who love to explore."
 ---
 
-**Travel Well** is a journal for people who want to travel with an open heart: to reach out to others, notice the beauty around them and stay curious about new food, music and culture.
+**Travelling Well** is a journal for people who want to travel with an open heart: to reach out to others, notice the beauty around them and stay curious about new food, music and culture.
 
-I'm Colin, a photographer at heart, and I started Travel Well to share the small human moments that make a trip, along with the practical notes that help make those moments easier.
+I'm Colin, a photographer at heart, and I started Travelling Well to share the small human moments that make a trip, along with the practical notes that help make those moments easier.
 
 ## What you will find here
 

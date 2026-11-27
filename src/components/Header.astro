@@ -57,7 +57,9 @@ const isActive = (path: string) => {
     class="shrink-0 self-center py-2"
     aria-label={site.title}
   >
-    <Logo class="text-foreground h-36 w-auto sm:h-72" />
+    <Logo
+      class:list={["text-foreground h-32 w-auto", wide ? "sm:h-72" : "sm:h-44"]}
+    />
   </a>
   <div
     class="border-border bg-background relative flex min-w-0 flex-1 items-baseline justify-between border-b py-4 sm:items-center sm:py-6"
